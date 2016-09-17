@@ -1,0 +1,8 @@
+My Quick guide on Apache2 web server
+
+--------------------------------------
+The HTML file is located in
+/var/www/html/index.html
+--------------------------------------
+the configuration files are located in
+/etc/apache2/

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp /var/www/html/index.html /var/www/html/index_old_v2.html	
+cp /var/www/html/layout.css /var/www/html/layout_old.css
+cp layout.css /var/www/html/
+cp index.html /var/www/html/
