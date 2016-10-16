@@ -4,3 +4,4 @@ cp /var/www/html/index.php /var/www/html/old/index_old_v2.php
 cp /var/www/html/layout.css /var/www/html/old/layout_old.css
 cp layout.css /var/www/html/
 cp index.php /var/www/html/
+cp mirror.php /var/www/html/

@@ -12,11 +12,12 @@
 
 	<header class="mainHeader">
 		<nav><ul>
-			<li class="active"><a href="#">Home</a></li>
+			<li><a href="#">Home</a></li>
 			<li><a href="#">About us</a></li>
 			<li><a href="#">Calendar</a></li>
 			<li><a href="#">Contact</a></li>
 			<li><a href="touchController.html">Drone</a></li>
+			<li><a href="mirror.php">Mirror</a></li>
 		</ul></nav>
 	</header>
 
