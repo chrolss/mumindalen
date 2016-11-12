@@ -36,7 +36,7 @@
 				Click me to display Date and Time.</button>
 
 					<p id="demo"></p>
-					<?php echo "HellO WorlD"; ?>
+					<?php echo "Hello World from php"; ?>
 					<p>Once upon a time, a pieru was released from two buttcheeks. A new
 					princess was born - Heini.</p>
 				</content>
