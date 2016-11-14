@@ -22,7 +22,9 @@ a:hover, a:active{
 	color: #CF5C3F;
 	background-color: #333366;
 }
-
+.w-body{
+	background-color: white;
+}
 .body {
 	background-image: url('img/abstract_fox.png');
 	margin: 0 auto; /* EVERYTHING CENTER */
@@ -30,29 +32,33 @@ a:hover, a:active{
 	clear: both; /*makes container no floating elements*/
 }
 
-.mirror-body {
+.mirror-body div {
 	background-color: black;
 	margin: 0 auto; /* EVERYTHING CENTER */
-	width:80%;
+	width:100%;
 	clear: both; /*makes container no floating elements*/
-
 }
-.main-mirror{
+
+.main-mirror div{
 	width: 70%;
 	float: left;
 	margin-top: 2%;
+	color: white;
 }
 
 .mirror-dateTile{
 	font-family: Arial, "Lucida Sans Unicode";
-	font-size: 300%;
-	color: white;
+	font-size: 900%;
+	text-align: top;
+	width: 70%;
+	color: white
 }
 
-.side-mirror {
-	width: 30%;
+.side-mirror aside {
+	width: 20%;
 	float: right;
 	margin-top: 2%;
+	background-color: black;
 }
 
 .mirror-weatherTile{
@@ -60,6 +66,7 @@ a:hover, a:active{
 	font-family: Arial, "Lucida Sans Unicode";
 	font-size: 600%;
 	color: white;
+	background-color: black;
 }
 
 .mainHeader nav{
@@ -160,6 +167,7 @@ a:hover, a:active{
 	margin: 0 0 2% 3%;
 	padding: 2% 3%;
 }
+
 .bottom-sidebar{
 	width: 21%;
 	float: left;

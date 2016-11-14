@@ -2,7 +2,7 @@
 <html lang="se">
 
 <head>
-	<title>HTML5/CSS3 Responsive Theme</title>
+	<title>Smart Mirror</title>
 	<meta charset="utf-8"/>
 
 	<link rel="stylesheet" href="layout.css">
@@ -10,9 +10,8 @@
 </head>
 
 <body class="mirror-body">
-
   <div class="main-mirror">
-    <p class="mirror-dateTile"> 10 October 2016 </p>
+    <p class="mirror-dateTile"> 11 November 2016 </p>
   </div>
 
   <aside class="side-mirror">
@@ -20,6 +19,5 @@
       <p class="mirror-weatherTile"> 8 </p>
     </article>
   </aside>
-
 </body>
 </html>

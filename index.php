@@ -18,6 +18,7 @@
 			<li><a href="#">Contact</a></li>
 			<li><a href="touchController.html">Drone</a></li>
 			<li><a href="mirror.php">Mirror</a></li>
+			<li><a href="weather.php">Weather</a></li>
 		</ul></nav>
 	</header>
 
