@@ -24,6 +24,7 @@ a:hover, a:active{
 }
 .w-body{
 	background-color: white;
+	color: black;
 }
 .body {
 	background-image: url('img/abstract_fox.png');
@@ -47,11 +48,12 @@ a:hover, a:active{
 }
 
 .mirror-dateTile{
+	background-color: white;
 	font-family: Arial, "Lucida Sans Unicode";
 	font-size: 900%;
 	text-align: top;
 	width: 70%;
-	color: white
+	color: black;
 }
 
 .side-mirror aside {

@@ -11,7 +11,11 @@
 
 <body class="mirror-body">
   <div class="main-mirror">
-    <p class="mirror-dateTile"> 11 November 2016 </p>
+    <p class="mirror-dateTile">
+			<?php
+			echo "11 November 2016";
+			?>
+			</p>
   </div>
 
   <aside class="side-mirror">
