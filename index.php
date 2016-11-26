@@ -14,8 +14,8 @@
 		<nav><ul>
 			<li><a href="#">Home</a></li>
 			<li><a href="#">About us</a></li>
-			<li><a href="#">Calendar</a></li>
 			<li><a href="#">Contact</a></li>
+			<li><a href="calendar.php">Calendar</a></li>
 			<li><a href="touchController.html">Drone</a></li>
 			<li><a href="mirror.php">Mirror</a></li>
 			<li><a href="weather.php">Weather</a></li>

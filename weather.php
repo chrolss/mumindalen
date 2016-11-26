@@ -33,6 +33,7 @@
     echo "The weather in Stockholm at $time_2:00 is $prog_2 and temperature: ${temp_2}\n";
     echo "The weather in Stockholm at $time_3:00 is $prog_3 and temperature: ${temp_3}\n";
   ?>
+  <p> <?php echo "$temp_1" ?> </p>
 
 </body>
 </html>

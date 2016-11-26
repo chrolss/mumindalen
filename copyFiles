@@ -7,5 +7,7 @@ echo "copying new files"
 cp layout.css /var/www/html/
 cp index.php /var/www/html/
 cp mirror.php /var/www/html/
-cp weather.php /var/www/html
+cp mirror.css /var/www/html/
+cp weather.php /var/www/html/
+cp calendar.php /var/www/html/
 echo "copy complete"
