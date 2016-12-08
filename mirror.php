@@ -75,6 +75,7 @@
 
 
     <div class="time-calendar-container">
+      <?php date_default_timezone_set("Europe/Stockholm") ?>
       <div class="time">
         <p> <?php print date('H:i'); ?> </p>
       </div>

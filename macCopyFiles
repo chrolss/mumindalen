@@ -1,5 +1,9 @@
-hej! 
-Script for copying webserver files in mac
+#!/bin/bash
 
-//Christian
-2016-12-04
+echo "Start copying"
+
+cp index.php /Library/Webserver/Documents
+cp layout.css /Library/Webserver/Documents
+cp mirror.css /Library/Webserver/Documents
+cp mirror.php /Library/Webserver/Documents
+cp calendar.php /Library/Webserver/Documents
