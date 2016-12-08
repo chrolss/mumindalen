@@ -1,8 +1,17 @@
 My Quick guide on Apache2 web server
 
+FOR LINUX
 --------------------------------------
 The HTML file is located in
 /var/www/html/index.html
 --------------------------------------
 the configuration files are located in
+/etc/apache2/
+
+FOR MAC
+-------------------------------------
+The HTML file is loated in
+/Library/WebServer/Documents
+-------------------------------------
+the config files are located in
 /etc/apache2/
