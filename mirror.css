@@ -134,17 +134,15 @@ body{
 	padding-bottom: 0;
 }
 
-
 .date p{
-	font-size: 460%;
-	padding: 0;
-	margin:  0;
-	margin-bottom: 50px;
+	font-size: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
 }
 
 
 .schedule{
-	font-size: 110%;
+	font-size: 310%;
 	line-height: 1.0;
 }
 
@@ -154,5 +152,5 @@ body{
 	font-family: arial;
 	font-size: 170%;
 	border-style: solid;
-	border-color: green;
+	border-color: blue;
 }
