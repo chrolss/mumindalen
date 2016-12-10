@@ -15,3 +15,6 @@ The HTML file is loated in
 -------------------------------------
 the config files are located in
 /etc/apache2/
+------------------------------------
+install composer using getcomposer.com and put the files
+in /Library/Webserver/Documents
