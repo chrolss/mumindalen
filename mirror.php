@@ -35,24 +35,24 @@
     <div class="weather-container">
       <article class="weather-current">
         <img src="cloud.png" alt="cloud" style="vertical-align: middle;"/>
-        <span style="vertical-align: middle;"> <?php echo "$temp_1" ?> &deg; </span>
+        <span style="vertical-align: middle;"> <?php echo "$temp_1" ?>&deg; </span>
       </article>
       <div class="weather-forecast">
         <div class="weather-forecast-1">
           <img src="sun.png" alt=<?php echo "$prog_2" ?> style="vertical-align: middle;"/>
-          <span style="vertical-align: middle;"> <?php echo "$temp_2" ?> &deg; </span>
+          <span style="vertical-align: middle;"> <?php echo "$temp_2" ?>&deg; </span>
         </div>
         <div class="weather-forecast-2">
           <img src="sun.png" alt=<?php echo "$prog_3" ?> style="vertical-align: middle;"/>
-          <span style="vertical-align: middle;"> <?php echo "$temp_3" ?> &deg; </span>
+          <span style="vertical-align: middle;"> <?php echo "$temp_3" ?>&deg; </span>
         </div>
         <div class="weather-forecast-3">
           <img src="thunderstorm.png" alt=<?php echo "$prog_4" ?> style="vertical-align: middle;"/>
-          <span style="vertical-align: middle;"> <?php echo "$temp_4" ?> &deg; </span>
+          <span style="vertical-align: middle;"> <?php echo "$temp_4" ?>&deg; </span>
         </div>
         <div class="weather-forecast-4">
           <img src="thunderstorm.png" alt=<?php echo "$prog_5" ?> style="vertical-align: middle;"/>
-          <span style="vertical-align: middle;"> <?php echo "$temp_5" ?> &deg; </span>
+          <span style="vertical-align: middle;"> <?php echo "$temp_5" ?>&deg; </span>
         </div>
       </div>
       <div class="weather-forecast-time">
