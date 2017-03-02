@@ -5,5 +5,6 @@ echo "Start copying"
 cp index.php /Library/Webserver/Documents
 cp layout.css /Library/Webserver/Documents
 cp mirror.css /Library/Webserver/Documents
+cp mirror-live.css /Library/Webserver/Documents
 cp mirror.php /Library/Webserver/Documents
 cp calendar.php /Library/Webserver/Documents

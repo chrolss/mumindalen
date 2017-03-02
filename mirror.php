@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>IoT Smart Mirror Layout</title>
-	  <link rel="stylesheet" href="mirror.css">
+	  <link rel="stylesheet" href="mirror-live.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 
@@ -83,16 +83,16 @@
 				<p> <?php print date('l'); ?><br> <?php print date('j F') ; ?> </p>
       </div>
       <div class="schedule">
-        <p> The Schedule with items </p>
-        <p> 12:00 - Lunch </p>
-        <p> 18:00 - Laundry </p>
+        <p> Mumindalen schedule </p>
+        <p> 3/3 @ 17:30 - Fly to Helsinki </p>
+        <p> 5/3 @ 21:20 - Fly to Stockholm </p>
       </div>
     </div>
   </div>
 
 
   <footer class="urgent-message">
-    <p> Remember that thing you wanted to do! </p>
+    <p> SmartMirror by Mumindalen </p>
   </footer>
 
 
