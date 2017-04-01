@@ -13,7 +13,7 @@
   </header>
 
 	<?php
-		$json_string2 = file_get_contents("http://api.wunderground.com/api/3cb4a366870aa8ef/hourly/q/SE/Stockholm.json");
+		$json_string2 = file_get_contents("http://api.wunderground.com/api/3cb4a366870aa8ef/hourly/q/Sweden/Kungsholmen.json");
 		$parsed_json = json_decode($json_string2);
 		$time_1 = $parsed_json->hourly_forecast[0]->{'FCTTIME'}->{'hour'};
 		$temp_1 = $parsed_json->hourly_forecast[0]->{'temp'}->{'metric'};
