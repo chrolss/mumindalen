@@ -10,4 +10,5 @@ cp mirror.php /var/www/html/
 cp mirror.css /var/www/html/
 cp weather.php /var/www/html/
 cp calendar.php /var/www/html/
+cp mirror-live.css /var/www/html/
 echo "copy complete"
