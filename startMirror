@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export DISPLAY=:0
+
+nohup chromium-browser --start-fullscreen --kiosk http://localhost/mirror.php &
+

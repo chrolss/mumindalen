@@ -71,7 +71,25 @@
       </div>
     </div>
 
+<?php
+$servername = "localhost";
+$username = "monitor";
+$password = "password";
+$dbname = "test";
+$title = "shopping";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT Date, Time, Title FROM schedule";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+?>
 
 
     <div class="time-calendar-container">
@@ -84,7 +102,7 @@
       </div>
       <div class="schedule">
         <p> Mumindalen schedule </p>
-        <p> 3/3 @ 17:30 - Fly to Helsinki </p>
+        <p> <?php echo $row["Title"] ?>  </p>
         <p> 5/3 @ 21:20 - Fly to Stockholm </p>
       </div>
     </div>

@@ -23,7 +23,7 @@
 	</header>
 
 	<div class="mainContent">
-		<div class="content">
+		<div class="content"> 
 			<article class="topContent">
 				<header>
 						<h2<a href="#" title="First Post">First Post</a></h2>
