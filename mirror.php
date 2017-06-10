@@ -71,31 +71,10 @@
       </div>
     </div>
 
-    <script>
-    function checkTime(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }
-      return i;
-    }
-      function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        // add a zero in front of numbers<10
-        m = checkTime(m);
-        document.getElementById('time').innerHTML = "hejsan";//h + ":" + m;
-        t = setTimeout(function() {
-          startTime()
-        }, 500);
-      }
-      startTime();
-    </script>
-
     <div class="time-calendar-container">
       <?php date_default_timezone_set("Europe/Stockholm") ?>
-      <div id="time">
-        <p> hej </p>
+      <div id="time" style="font-size: 660%; margin-bottom: 0; padding-bottom: 0;">
+        <p>  </p>
       </div>
       <div class="date">
 				<p> <?php print date('l'); ?><br> <?php print date('j F') ; ?> </p>
@@ -113,6 +92,28 @@
     <p> SmartMirror by Mumindalen </p>
   </footer>
 
+<script>
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function() {
+          startTime()
+        }, 500);
+      }
+      startTime();
+</script>
 
 
 

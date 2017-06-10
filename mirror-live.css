@@ -134,6 +134,12 @@ body{
 	padding-bottom: 0;
 }
 
+#time {
+	font-size: 660%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
 .date p{
 	font-size: 300%;
 	padding: 0 0 0 0;

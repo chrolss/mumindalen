@@ -17,7 +17,7 @@
     //echo "Current temperature in ${location} is: ${temp_f}\n";
 
 
-    $json_string2 = file_get_contents("http://api.wunderground.com/api/3cb4a366870aa8ef/hourly/q/SE/Stockholm.json");
+    $json_string2 = file_get_contents("http://api.wunderground.com/api/3cb4a366870aa8ef/hourly/q/Sweden/Kungsholmen.json");
     $parsed_json = json_decode($json_string2);
     //$location = $parsed_json->{'location'}->{'city'};
     $time_1 = $parsed_json->hourly_forecast[0]->{'FCTTIME'}->{'hour'};
@@ -34,6 +34,21 @@
     echo "The weather in Stockholm at $time_3:00 is $prog_3 and temperature: ${temp_3}\n";
   ?>
   <p> <?php echo "$temp_1" ?> </p>
+	<div id="test">
+		
+	</div>
+	<script>
+	function getImage() {
+		var phpName = <?php echo(json_encode($prog_2)); ?>;
+		str = phpName.replace(/\s+/g, '');
+		imgName = "img/" + str + ".png";
+		var img = document.createElement('img');
+		img.src = "img/MostlySunny.png";
+		document.getElementById("test").appendChild = img;
+		document.getElementById("test").innerHTML = imgName;
+	}
+	getImage();
+	</script>
 
 </body>
 </html>
