@@ -71,31 +71,31 @@
       </div>
     </div>
 
-<?php
-$servername = "localhost";
-$username = "monitor";
-$password = "password";
-$dbname = "test";
-$title = "shopping";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "SELECT Date, Time, Title FROM schedule";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-?>
-
+    <script>
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        document.getElementById('time').innerHTML = "hejsan";//h + ":" + m;
+        t = setTimeout(function() {
+          startTime()
+        }, 500);
+      }
+      startTime();
+    </script>
 
     <div class="time-calendar-container">
       <?php date_default_timezone_set("Europe/Stockholm") ?>
-      <div class="time">
-        <p> <?php print date('H:i'); ?> </p>
+      <div id="time">
+        <p> hej </p>
       </div>
       <div class="date">
 				<p> <?php print date('l'); ?><br> <?php print date('j F') ; ?> </p>
