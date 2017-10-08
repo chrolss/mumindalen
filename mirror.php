@@ -5,7 +5,6 @@
 	  <link rel="stylesheet" href="css/mirror-live.css">
 	  <link rel="stylesheet" href="css/weather-icons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://use.fontawesome.com/8634d11488.js"></script>
    </head>
 
 
@@ -36,24 +35,27 @@
   <div class="container">
     <div class="weather-container">
       <article class="weather-current">
-      	<i id="bigIcon" class="testClass" aria-hidden="true"></i>
+      	<i id="bigIcon" class="wi wi-dust"></i>
         <span style="vertical-align: middle;"> <?php echo "$temp_1" ?>&deg; </span>
       </article>
       <div class="weather-forecast">
         <div class="weather-forecast-1">
           <img src="sun.png" alt=<?php echo "$prog_2" ?> style="vertical-align: middle;"/>
-          <i class="wi wi-night-sleet"></i>
+          <i id="smallIcon1" class="wi wi-dust"></i>
           <span style="vertical-align: middle;"> <?php echo "$temp_2" ?>&deg; </span>
         </div>
         <div class="weather-forecast-2">
+          <i id="smallIcon2" class="wi wi-dust"></i>
           <img src="sun.png" alt=<?php echo "$prog_3" ?> style="vertical-align: middle;"/>
           <span style="vertical-align: middle;"> <?php echo "$temp_3" ?>&deg; </span>
         </div>
         <div class="weather-forecast-3">
+          <i id="smallIcon3" class="wi wi-dust"></i>
           <img src="thunderstorm.png" alt=<?php echo "$prog_4" ?> style="vertical-align: middle;"/>
           <span style="vertical-align: middle;"> <?php echo "$temp_4" ?>&deg; </span>
         </div>
         <div class="weather-forecast-4">
+          <i id="smallIcon4" class="wi wi-dust"></i>
           <img src="thunderstorm.png" alt=<?php echo "$prog_5" ?> style="vertical-align: middle;"/>
           <span style="vertical-align: middle;"> <?php echo "$temp_5" ?>&deg; </span>
         </div>
@@ -96,8 +98,21 @@
   </footer>
 
 <script>
-	document.getElementById("bigIcon").className = "fa fa-cloud fa-2x";
+	
 
+	function returnIcon() {
+		var prog1=<?php echo json_encode($prog_1); ?>;
+		document.getElementById("bigIcon").className = dictionary(prog1);
+		var prog2=<?php echo json_encode($prog_2); ?>;
+		document.getElementById("smallIcon1").className = dictionary(prog2);
+		var prog3=<?php echo json_encode($prog_3); ?>;
+		document.getElementById("smallIcon2").className = dictionary(prog3);
+		var prog4=<?php echo json_encode($prog_4); ?>;
+		document.getElementById("smallIcon3").className = dictionary(prog4);
+		var prog5=<?php echo json_encode($prog_5); ?>;
+		document.getElementById("smallIcon4").className = dictionary(prog5);
+	}
+	returnIcon();
     function checkTime(i) {
       if (i < 10) {
         i = "0" + i;
@@ -118,6 +133,15 @@
         }, 500);
       }
       startTime();
+
+    function dictionary(_name){
+    	if (_name == "Rain"){
+    		return "wi wi-rain";
+    	}
+    	else{
+    		return "wi wi-sun";
+    	}
+    };
 </script>
 
 
