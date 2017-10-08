@@ -4,6 +4,7 @@
     <title>IoT Smart Mirror Layout</title>
 	  <link rel="stylesheet" href="mirror-live.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/8634d11488.js"></script>
    </head>
 
 
@@ -34,7 +35,8 @@
   <div class="container">
     <div class="weather-container">
       <article class="weather-current">
-        <img src="cloud.png" alt="cloud" style="vertical-align: middle;"/>
+      	<i id="testClass" class="testClass" aria-hidden="true"></i>
+        
         <span style="vertical-align: middle;"> <?php echo "$temp_1" ?>&deg; </span>
       </article>
       <div class="weather-forecast">
@@ -93,6 +95,8 @@
   </footer>
 
 <script>
+	document.getElementById("testClass").className = "fa fa-cloud fa-2x";
+
     function checkTime(i) {
       if (i < 10) {
         i = "0" + i;
