@@ -1,0 +1,53 @@
+body{
+	background-color: lightgrey;
+	color: black;
+	line-height: 1.5;
+	font-family: 'Belgrano';
+  width: 90%;
+  font-size: 100%;
+  margin: auto;
+}
+
+.instructions{
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+#mainResult{
+  font-size: 120%;
+}
+
+.container{
+  display: flex;
+  padding: 2px 2px 2px 2px;
+}
+
+.calcContainer{
+  background-color: darkgrey;
+  text-align: right;
+  width: 50%;
+}
+
+#subBtn{
+  color: blue;
+  background-color: white;
+  width: 200px;
+  height: 20px;
+}
+
+#yeaBtn{
+  color: blue;
+  background-color: white;
+  width: 200px;
+  height: 20px;
+}
+
+.historyContainer{
+  background-color: darkgrey;
+  text-align: right;
+  flex-grow: 1;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}

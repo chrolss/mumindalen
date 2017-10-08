@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="se">
+
+<head>
+	<title>Retirement Calculator</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<div class="instructions">
+  <h1> Välkommen till nya pensionskalkylatorn! </h1>
+  <div id="mainResult">
+    <p> Fyll i rutorna med siffror och välj sedan vad du vill räkna ut med knapparna </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="calcContainer">
+    <form id="formular">
+    Kapital (SEK): <input type="number" value= "1000000" name="startCap" id="cap"><br>
+    År: <input type="number" name="year" value="10" id="years"><br>
+    Årlig medelränta (t.ex. 3): <input type="number" name="interest" value="2" id="rate"><br>
+    Månatligt uttag (SEK): <input type="number" name="monthly" value="15000" id="month"><br>
+    <input type="button" value="Räkna månatligt uttag" onclick="calculate()" id="subBtn"><br>
+    <input type="button" value="Räkna år" onclick="calculateYears()" id="yeaBtn">
+    </form>
+
+    <div id="calcField">
+
+    </div>
+  </div>
+  <div class="historyContainer">
+    <div id="historyField">
+      <p><i> Här sparas dina tidigare uträkningar.</i></p>
+    </div>
+  </div>
+</div>
+
+<script>
+var answers = [];
+function updateAnswers(_result){
+  var ln = answers.length;
+  answers[ln] = _result;
+  var text = "";
+  for (j = 0; j<ln+1; j++){
+    text += answers[j] + "<br><br>";
+  }
+  document.getElementById('historyField').innerHTML = text;
+}
+
+function calculateYears(){
+  var jCap = document.getElementById("cap").value;
+  var jMonthly = document.getElementById("month").value;
+  var jRate = document.getElementById("rate").value;
+  var sum = jCap;
+  var jjRate = Math.pow(jRate/100 + 1,1/12);
+  var j = 0;
+  while (sum>0){
+    sum = sum*jjRate - jMonthly;
+    j = j + 1;
+    if (j>720){
+      sum = -1;
+      j = 60;
+    }
+  }
+  var years = j/12;
+  var result = years.toFixed(0);
+  var textOutput = "Med " + jCap + " SEK i kapital, och ränta " + jRate + "% kan du ta ut " + jMonthly + " SEK i " + result + "år" ;
+  var resField = document.getElementById("mainResult");
+  resField.style.fontSize = "30px";
+  document.getElementById('mainResult').innerHTML = textOutput;
+  updateAnswers(textOutput);
+}
+
+function calculate(){
+  var jCap = document.getElementById("cap").value;
+  var jYears = document.getElementById("years").value;
+  var jRate = document.getElementById("rate").value;
+  var sum = 0;
+  var jjRate = Math.pow(jRate/100 + 1,1/12);
+
+
+for (i = 1; i<jYears*12; i++){
+  sum = sum + 1/(Math.pow(jjRate,i));
+}
+  var result = jCap/sum;
+  result = result.toFixed(0);
+  var textOutput = "Med " + jCap + " SEK i kapital, och ränta " + jRate + "% kan du ta ut " + result + " SEK i " + jYears + "år" ;
+  var resField = document.getElementById("mainResult");
+  resField.style.fontSize = "30px";
+  document.getElementById('mainResult').innerHTML = textOutput;
+  updateAnswers(textOutput);
+}
+
+</script>
+
+</body>
+<style>
+body{
+	background-color: white;
+	color: black;
+	line-height: 1.5;
+	font-family: 'Belgrano';
+  width: 90%;
+  font-size: 100%;
+  margin: auto;
+}
+
+.instructions{
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+#mainResult{
+  font-size: 120%;
+}
+
+.container{
+  display: flex;
+  padding: 2px 2px 2px 2px;
+}
+
+.calcContainer{
+  background-color: darkgrey;
+  text-align: right;
+  width: 50%;
+}
+
+#subBtn{
+  color: blue;
+  background-color: white;
+  width: 200px;
+  height: 20px;
+}
+
+#yeaBtn{
+  color: blue;
+  background-color: white;
+  width: 200px;
+  height: 20px;
+}
+
+.historyContainer{
+  background-color: darkgrey;
+  text-align: right;
+  flex-grow: 1;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+</style>
