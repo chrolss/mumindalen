@@ -4,11 +4,11 @@ echo "backing up old files"
 cp /var/www/html/index.php /var/www/html/old/index_old_v2.php	
 cp /var/www/html/layout.css /var/www/html/old/layout_old.css
 echo "copying new files"
-cp layout.css /var/www/html/
+cp layout.css /var/www/html/css
 cp index.php /var/www/html/
 cp mirror.php /var/www/html/
-cp mirror.css /var/www/html/
+cp mirror.css /var/www/html/css
 cp weather.php /var/www/html/
 cp calendar.php /var/www/html/
-cp mirror-live.css /var/www/html/
+cp mirror-live.css /var/www/html/css
 echo "copy complete"
