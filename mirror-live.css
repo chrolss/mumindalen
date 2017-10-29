@@ -2,7 +2,9 @@ body{
 	background-color: black;
 	color: #99ccff;
 	line-height: 1.5;
-	font-family: Calibri;
+	/*font-family: Calibri;
+	*/
+	font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 
@@ -29,6 +31,7 @@ body{
 .weather-container{
 	text-align: left;
 	width: 50%;
+	font-family: 'Orbitron', sans-serif;
 	/*border-style: solid;
 	border-color: red;*/
 }
@@ -43,10 +46,10 @@ body{
 	/*
 	The width of the forecast tiles should not be fixed percentage, as this causes the tiles
 	to always cover 50% of the mirror. Instead, they should have a maximum size and always keep
-	that size.
+	that size. Original font-size 140%
 	*/
 	display:flex;
-	font-size: 140%;
+	font-size: 230%;
 	text-align: center;
 }
 
@@ -82,6 +85,7 @@ body{
 .weather-forecast-time{
 	display:flex;
 	font-size: 140%;
+	font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 

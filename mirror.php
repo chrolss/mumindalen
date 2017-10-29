@@ -4,6 +4,8 @@
     <title>IoT Smart Mirror Layout</title>
 	  <link rel="stylesheet" href="css/mirror-live.css">
 	  <link rel="stylesheet" href="css/weather-icons.min.css">
+	  <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 
