@@ -10,7 +10,7 @@
 
 <body class="body">
   <header class="main-header">
-    <p> An empty and probably unnecessary header on the page </p>
+    <p>   </p>
   </header>
 
 	<?php
@@ -19,18 +19,23 @@
 		$time_1 = $parsed_json->hourly_forecast[0]->{'FCTTIME'}->{'hour'};
 		$temp_1 = $parsed_json->hourly_forecast[0]->{'temp'}->{'metric'};
 		$prog_1 = $parsed_json->hourly_forecast[0]->{'wx'};
+		$icon_1 = $parsed_json->hourly_forecast[0]->{'icon'};
 		$time_2 = $parsed_json->hourly_forecast[2]->{'FCTTIME'}->{'hour'};
 		$temp_2 = $parsed_json->hourly_forecast[2]->{'temp'}->{'metric'};
 		$prog_2 = $parsed_json->hourly_forecast[2]->{'wx'};
+		$icon_2 = $parsed_json->hourly_forecast[2]->{'icon'};
 		$time_3 = $parsed_json->hourly_forecast[4]->{'FCTTIME'}->{'hour'};
 		$temp_3 = $parsed_json->hourly_forecast[4]->{'temp'}->{'metric'};
 		$prog_3 = $parsed_json->hourly_forecast[4]->{'wx'};
+		$icon_3 = $parsed_json->hourly_forecast[4]->{'icon'};
 		$time_4 = $parsed_json->hourly_forecast[6]->{'FCTTIME'}->{'hour'};
 		$temp_4 = $parsed_json->hourly_forecast[6]->{'temp'}->{'metric'};
 		$prog_4 = $parsed_json->hourly_forecast[6]->{'wx'};
+		$icon_4 = $parsed_json->hourly_forecast[6]->{'icon'};
 		$time_5 = $parsed_json->hourly_forecast[8]->{'FCTTIME'}->{'hour'};
 		$temp_5 = $parsed_json->hourly_forecast[8]->{'temp'}->{'metric'};
 		$prog_5 = $parsed_json->hourly_forecast[8]->{'wx'};
+		$icon_5 = $parsed_json->hourly_forecast[8]->{'icon'};
 		?>
   <div class="container">
     <div class="weather-container">
@@ -40,23 +45,19 @@
       </article>
       <div class="weather-forecast">
         <div class="weather-forecast-1">
-          <img src="sun.png" alt=<?php echo "$prog_2" ?> style="vertical-align: middle;"/>
           <i id="smallIcon1" class="wi wi-dust"></i>
           <span style="vertical-align: middle;"> <?php echo "$temp_2" ?>&deg; </span>
         </div>
         <div class="weather-forecast-2">
           <i id="smallIcon2" class="wi wi-dust"></i>
-          <img src="sun.png" alt=<?php echo "$prog_3" ?> style="vertical-align: middle;"/>
           <span style="vertical-align: middle;"> <?php echo "$temp_3" ?>&deg; </span>
         </div>
         <div class="weather-forecast-3">
           <i id="smallIcon3" class="wi wi-dust"></i>
-          <img src="thunderstorm.png" alt=<?php echo "$prog_4" ?> style="vertical-align: middle;"/>
           <span style="vertical-align: middle;"> <?php echo "$temp_4" ?>&deg; </span>
         </div>
         <div class="weather-forecast-4">
           <i id="smallIcon4" class="wi wi-dust"></i>
-          <img src="thunderstorm.png" alt=<?php echo "$prog_5" ?> style="vertical-align: middle;"/>
           <span style="vertical-align: middle;"> <?php echo "$temp_5" ?>&deg; </span>
         </div>
       </div>
@@ -101,15 +102,15 @@
 	
 
 	function returnIcon() {
-		var prog1=<?php echo json_encode($prog_1); ?>;
+		var prog1=<?php echo json_encode($icon_1); ?>;
 		document.getElementById("bigIcon").className = dictionary(prog1);
-		var prog2=<?php echo json_encode($prog_2); ?>;
+		var prog2=<?php echo json_encode($icon_2); ?>;
 		document.getElementById("smallIcon1").className = dictionary(prog2);
-		var prog3=<?php echo json_encode($prog_3); ?>;
+		var prog3=<?php echo json_encode($icon_3); ?>;
 		document.getElementById("smallIcon2").className = dictionary(prog3);
-		var prog4=<?php echo json_encode($prog_4); ?>;
+		var prog4=<?php echo json_encode($icon_4); ?>;
 		document.getElementById("smallIcon3").className = dictionary(prog4);
-		var prog5=<?php echo json_encode($prog_5); ?>;
+		var prog5=<?php echo json_encode($icon_5); ?>;
 		document.getElementById("smallIcon4").className = dictionary(prog5);
 	}
 	returnIcon();
@@ -127,7 +128,8 @@
         // add a zero in front of numbers<10
         m = checkTime(m);
         s = checkTime(s);
-        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        // document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        document.getElementById('time').innerHTML = h + ":" + m;
         t = setTimeout(function() {
           startTime()
         }, 500);
@@ -135,11 +137,29 @@
       startTime();
 
     function dictionary(_name){
-    	if (_name == "Rain"){
+    	if (_name == "rain"){
     		return "wi wi-rain";
     	}
+    	else if (_name == "snow"){
+    		return "wi wi-day-snow";
+    	}
+    	else if (_name == "partlycloudy"){
+    		return "wi wi-day-cloudy";
+    	}
+    	else if (_name == "cloudy") {
+    		return "wi wi-cloudy";
+    	}
+    	else if (_name == "mostlycloudy") {
+    		return "wi wi-cloudy";
+    	}
+    	else if (_name == "Light") {
+    		return "";
+    	}
+    	else if (_name == "chancerain") {
+    		return "wi wi-day-rain";
+    	}
     	else{
-    		return "wi wi-sun";
+    		return "wi wi-alien";
     	}
     };
 </script>
