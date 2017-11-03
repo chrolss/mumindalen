@@ -120,13 +120,13 @@ body{
 	border-color: pink;*/
 }
 
-
 .time-calendar-container{
  text-align: right;
  flex-grow: 1;
  line-height: 1;
  padding: 0;
  margin: 0;
+ 
 /* border-style: solid;
  border-color: orange;*/
 }
@@ -162,7 +162,7 @@ body{
 
 
 .schedule{
-	font-size: 250%;
+	font-size: 200%;
 	line-height: 1.0;
 }
 

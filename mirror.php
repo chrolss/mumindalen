@@ -89,8 +89,38 @@
       </div>
       <div class="schedule">
         <p> Mumindalen schedule </p>
-        <p> <?php echo $row["Title"] ?>  </p>
-        <p> 5/3 @ 21:20 - Fly to Stockholm </p>
+        <p> <?php 
+      $servername = "localhost";
+$username = "monitor";
+$password = "password";
+$dbname = "test";
+$title = "shopping";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// get all elements from table
+
+$sql = "SELECT Date, Time, Title FROM schedule";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "Date: " . $row["Date"]. " - at: " . $row["Time"]. " - " . $row["Title"]. "\n";
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+      
+      ?></p>
       </div>
     </div>
   </div>
@@ -154,11 +184,11 @@
     	else if (_name == "mostlycloudy") {
     		return "wi wi-cloudy";
     	}
-    	else if (_name == "Light") {
-    		return "";
-    	}
     	else if (_name == "chancerain") {
     		return "wi wi-day-rain";
+    	}
+    	else if (_name == "clear") {
+    		return "wi wi-day-sunny";
     	}
     	else{
     		return "wi wi-alien";
