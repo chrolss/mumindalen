@@ -98,14 +98,66 @@
 	if (count($results->getItems()) == 0) {
 	  print "No upcoming events found.\n";
 	} else {
+	// Create the SQL connection and delete previous entries here	
+	$servername = "localhost";
+	$username = "monitor";
+	$password = "password";
+	$dbname = "test";
+	$title = "shopping";
+	
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	
+	// Check connection
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+	echo "Connected successfully\n";
+	
+	// Delete all previous elements in the table
+	
+	$delSql = "DELETE FROM schedule";
+	
+	if ($conn->query($delSql) == TRUE) {
+	   echo "All previous entries deleted successfully\n";
+	} else {
+	   echo "Error: " . $delSql . "<br>" . $conn->error;
+	}
+	
+	// End of SQL connection code
+	
 	  print "Upcoming events:\n";
 	  foreach ($results->getItems() as $event) {
 	    $start = $event->start->dateTime;
+
 	    if (empty($start)) {
-	      $start = $event->start->date;
+	      	$start = $event->start->date;
+	      	$date = mysqli_real_escape_string($conn, $start);
+	    } else {
+	    	$date = substr($start, 0, 10);
+	    	$date = mysqli_real_escape_string($conn, $date);
+	    	
 	    }
+	    
+	    // Original code line with prints
 	    printf("%s (%s)\n", $event->getSummary(), $start);
+	    // New code for inserting into SQL database
+	    
+	    
+		
+		$activity = mysqli_real_escape_string($conn, $event->getSummary());
+		$sql = "INSERT INTO schedule VALUES ('$date', '12:00', '$activity')";
+		
+		if ($conn->query($sql) === TRUE) {
+		    echo "New record created successfully\n";
+		} else {
+		    echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		
+		
+	    
 	  }
+	  $conn->close();
 	}
 	?>
 </body>
